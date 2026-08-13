@@ -101,11 +101,11 @@ a {
 }
 
 /**
- * The treasury numeral. m42 clips its top pixel row against a tight edge, so
- * this carries its own padding and line-height rather than relying on the
- * layout around it.
+ * m42 setting. The face clips its top pixel row against a tight edge, so this
+ * carries its own padding and line-height rather than relying on the layout
+ * around it. Caps-only — always pair with uppercase text.
  */
-.figure {
+.m42 {
   font-family: 'm42', var(--font-mono), monospace;
   letter-spacing: 0.02em;
   line-height: 1.15;

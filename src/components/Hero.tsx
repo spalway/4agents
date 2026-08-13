@@ -36,7 +36,10 @@ export default function Hero() {
             company and names the four of them at the same time.
             Not .lbl: that is nowrap (right for a column heading, wrong for a
             sentence) and tracks far wider than this line wants. */}
-        <p className="text-center text-[13px] font-medium tracking-[0.02em] uppercase">
+        {/* m42 is caps-only and wide — at a fixed size this line would set the
+            page width on a phone, so it scales with the viewport and wraps at
+            the word boundaries between seats. */}
+        <p className="m42 text-center text-[clamp(11px,1.45vw,16px)] uppercase">
           {EYEBROW.map((word, i) => (
             <span key={word} style={{ color: SEATS[i].color }}>
               {word}
@@ -65,14 +68,14 @@ export default function Hero() {
             {CONTRACT ? (copied ? 'copied to clipboard' : CONTRACT) : 'pending'}
           </button>
 
-          <div className="mt-10 text-[17px] font-medium tracking-[0.22em] text-ink">FUNDING</div>
+          <div className="mt-5 text-[17px] font-medium tracking-[0.22em] text-ink">FUNDING</div>
           {/* m42 is a wide bitmap face, so this scales with the viewport rather
               than sitting at a fixed px — the live figure at 42px is ~524px
               wide and would set the page width on a phone. */}
-          <div className="figure mt-3 text-[clamp(18px,3.6vw,26px)] text-money">
+          <div className="m42 mt-2 text-[clamp(18px,3.6vw,26px)] text-money">
             {FUNDING_LIVE ? `$${usd(treasury(uptime()))}` : '$0'}
           </div>
-          <div className="mt-2 text-[10.5px] text-ink-3">(creator fees)</div>
+          <div className="mt-1 text-[10.5px] text-ink-3">(creator fees)</div>
         </div>
       </div>
 
