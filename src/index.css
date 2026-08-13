@@ -1,0 +1,227 @@
+@import 'tailwindcss';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+
+/**
+ * Sans for the interface, mono only where the content is literally code.
+ *
+ * Monospace everywhere was the thing making the page look pixelated and busy:
+ * every label, number and heading carried the same rhythm, so nothing could be
+ * subordinate to anything else. Roboto handles UI text; IBM Plex Mono is now
+ * reserved for source, shell output, and the contract address — places where
+ * character alignment is the point.
+ */
+/**
+ * m42 — a caps-only bitmap face, used for exactly one thing: the treasury
+ * numeral. font-display: block rather than swap, because a bitmap face
+ * swapping in after a proportional fallback visibly jumps.
+ */
+@font-face {
+  font-family: 'm42';
+  src: url('/fonts/m42.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@theme {
+  --color-bg: #101010;
+  --color-surface: #171717;
+  --color-raise: #1e1e1e;
+  --color-sunk: #0c0c0c;
+
+  --color-line: #282828;
+  --color-line-soft: #1f1f1f;
+
+  --color-ink: #e4e4e4;
+  --color-ink-2: #a2a2a2;
+  --color-ink-3: #737373;
+  --color-ink-4: #4d4d4d;
+  --color-signal: #d9a441;
+  /* Reserved for the treasury balance and nothing else. */
+  --color-money: #5fdd93;
+
+
+  --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ---------------------------------------------------------------- base --- */
+
+html {
+  background: #101010;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #101010;
+  color: #a2a2a2;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #e4e4e4;
+  color: #101010;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #282828 transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #282828;
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #383838;
+}
+
+/* ------------------------------------------------------------ primitives -- */
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/**
+ * The treasury numeral. m42 clips its top pixel row against a tight edge, so
+ * this carries its own padding and line-height rather than relying on the
+ * layout around it.
+ */
+.figure {
+  font-family: 'm42', var(--font-mono), monospace;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  padding-top: 0.12em;
+}
+
+/** One label style across the whole site. */
+.lbl {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #737373;
+  white-space: nowrap;
+}
+
+.lbl-b {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #a2a2a2;
+  white-space: nowrap;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The frame everything lives inside. */
+.frame {
+  background: #171717;
+  border: 1px solid #282828;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* A strip across the top of a frame or section. */
+.strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 6px 12px;
+  background: #1e1e1e;
+  border-bottom: 1px solid #282828;
+}
+
+.sunk {
+  background: #0c0c0c;
+  border: 1px solid #282828;
+  border-radius: 4px;
+}
+
+.blk {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4d4d4d;
+  vertical-align: middle;
+}
+.blk-on {
+  background: #7bc47f;
+}
+.blk-idle {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px #4d4d4d;
+}
+.blk-sig {
+  background: #d9a441;
+}
+
+@keyframes caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.caret {
+  animation: caret 1.06s steps(1) infinite;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/**
+ * X mark. The supplied PNG is a palette image with a tRNS chunk — solid glyph,
+ * transparent ground — so it works as a mask and the colour comes from the
+ * element underneath rather than from the file. That is the only way to tint a
+ * raster logo without shipping four copies of it.
+ */
+.x-mark {
+  -webkit-mask-image: url('/twitter_logo.png');
+  mask-image: url('/twitter_logo.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  /* The gradient is supplied inline from SEATS in data/agents.ts, which is the
+     single source of truth for seat colour — duplicating the four hexes here
+     would let the two drift apart. */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Local environment. .env.example documents what belongs here.
+.env
+.env.local
+.env.*.local
+
+.DS_Store
+Thumbs.db
+*.log

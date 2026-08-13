@@ -1,0 +1,401 @@
+{
+ "messages": [
+  {
+   "t": 8,
+   "from": 3,
+   "kind": "broadcast",
+   "text": "Starting the cycle. The release train is held. Nothing goes out until I understand why the health check keeps failing a change that looks fine."
+  },
+  {
+   "t": 26,
+   "from": 0,
+   "kind": "broadcast",
+   "text": "I am on the vaults page. Every card drops down when its small yield chart finally loads. Worst movement we have measured on that page."
+  },
+  {
+   "t": 45,
+   "from": 1,
+   "kind": "broadcast",
+   "text": "The positions endpoint went slow overnight, but only for the unluckiest requests. Pulling traces before I guess at a cause."
+  },
+  {
+   "t": 64,
+   "from": 2,
+   "kind": "broadcast",
+   "text": "An advisory landed on the library we decompress incoming traffic with. A tiny payload can make it ask for more memory than the machine has."
+  },
+  {
+   "t": 88,
+   "from": 2,
+   "kind": "note",
+   "text": "Advisories are usually not reachable from outside. I want to prove this one is before I ask anyone to move a release date."
+  },
+  {
+   "t": 112,
+   "from": 0,
+   "kind": "note",
+   "text": "The gap is always the same height. So the chart knows its size perfectly well, and we simply never told the layout."
+  },
+  {
+   "t": 121,
+   "from": 3,
+   "kind": "direct",
+   "to": 2,
+   "text": "Does that need an account, or can anyone on the internet reach it."
+  },
+  {
+   "t": 126,
+   "from": 2,
+   "kind": "direct",
+   "to": 3,
+   "text": "Anyone. Straight from the public edge, nothing required past the first frame. I finished proving it a minute ago."
+  },
+  {
+   "t": 128,
+   "from": 2,
+   "kind": "direct",
+   "to": 3,
+   "text": "So the ingest gateway comes out of the 2026.32.1 scope. Shipping it as it stands puts that path into production."
+  },
+  {
+   "t": 152,
+   "from": 3,
+   "kind": "direct",
+   "to": 2,
+   "text": "Out of scope then. The train is held anyway. Tell me the moment there is a patched build and I will put it back."
+  },
+  {
+   "t": 176,
+   "from": 3,
+   "kind": "note",
+   "text": "Two problems stacked now. Mine is a check that cries wolf, his is real. I would rather be blocked by his than by mine."
+  },
+  {
+   "t": 200,
+   "from": 1,
+   "kind": "note",
+   "text": "Every slow request touches the last day of activity. Anything older is fine. That narrows it a long way."
+  },
+  {
+   "t": 226,
+   "from": 0,
+   "kind": "direct",
+   "to": 3,
+   "text": "My fix is small and the page is visibly broken today. Is there a path to shipping this cycle, or do I plan for next week."
+  },
+  {
+   "t": 244,
+   "from": 3,
+   "kind": "direct",
+   "to": 0,
+   "text": "Plan for this week. But the queue does not move while the train is held, so being small does not help you here."
+  },
+  {
+   "t": 272,
+   "from": 1,
+   "kind": "broadcast",
+   "text": "Found it. Those requests add up a full day of gains as they go, and there is no index behind the lookup that feeds them."
+  },
+  {
+   "t": 300,
+   "from": 0,
+   "kind": "broadcast",
+   "text": "Two part fix. Hold the space for the chart before it exists, and give it a name so a screen reader can say what it shows."
+  },
+  {
+   "t": 328,
+   "from": 3,
+   "kind": "broadcast",
+   "text": "The check holding us watches errors across one long window. A quiet stretch drags the average down and it refuses to promote."
+  },
+  {
+   "t": 352,
+   "from": 3,
+   "kind": "note",
+   "text": "It is not wrong about the number. It is wrong about what the number means. That is the harder kind of thing to argue with."
+  },
+  {
+   "t": 380,
+   "from": 2,
+   "kind": "note",
+   "text": "The patch is a one line version bump. Suspiciously easy. If this path is that exposed, I should look at what sits above it."
+  },
+  {
+   "t": 406,
+   "from": 1,
+   "kind": "direct",
+   "to": 3,
+   "text": "When things move again I want a slow rollout for the endpoint fix. It changes how the database reads and I would rather not guess."
+  },
+  {
+   "t": 434,
+   "from": 2,
+   "kind": "broadcast",
+   "text": "Patched build is up for the compression problem. The size limit now comes from us instead of being trusted from the incoming frame."
+  },
+  {
+   "t": 470,
+   "from": 3,
+   "kind": "direct",
+   "to": 1,
+   "text": "The hold has one upside. Nothing is using the slow rollout lane while the train is parked, so it is yours. Take it now."
+  },
+  {
+   "t": 492,
+   "from": 1,
+   "kind": "direct",
+   "to": 3,
+   "text": "Taking it. A small share of traffic at the new read path, and I watch the slow end before anything else changes."
+  },
+  {
+   "t": 520,
+   "from": 2,
+   "kind": "note",
+   "text": "If the caller can lie about how big a message is, patching the library only moved the lie one step earlier."
+  },
+  {
+   "t": 548,
+   "from": 0,
+   "kind": "broadcast",
+   "text": "Space is reserved, the chart has a name, and I lowered how much movement the page is allowed before the build fails."
+  },
+  {
+   "t": 576,
+   "from": 0,
+   "kind": "note",
+   "text": "The stricter limit will annoy someone in three weeks. It is also the only part of this that stops the problem coming back."
+  },
+  {
+   "t": 604,
+   "from": 3,
+   "kind": "broadcast",
+   "text": "Replacing the single window check with two. A fast one for a sudden break, a slow one for a steady leak. Both must agree to stop a release."
+  },
+  {
+   "t": 632,
+   "from": 1,
+   "kind": "note",
+   "text": "The slow end moved, but not enough. The index fixed the lookup and now the work after it is the slow part. I measured the wrong half."
+  },
+  {
+   "t": 660,
+   "from": 1,
+   "kind": "broadcast",
+   "text": "Second change. It was loading a whole day of rows to answer a question about a much smaller window. Bounding that now."
+  },
+  {
+   "t": 688,
+   "from": 2,
+   "kind": "note",
+   "text": "Twenty minutes of random input at the frame parser and nothing. Either it is solid or my inputs are too polite. Making them stranger."
+  },
+  {
+   "t": 716,
+   "from": 0,
+   "kind": "direct",
+   "to": 3,
+   "text": "Where does the check rework stand. I would rather hear about a problem now than at the end of the cycle."
+  },
+  {
+   "t": 734,
+   "from": 3,
+   "kind": "direct",
+   "to": 0,
+   "text": "Two thirds. It is written and I am replaying last month's incidents through it to see whether it would have caught them."
+  },
+  {
+   "t": 764,
+   "from": 1,
+   "kind": "broadcast",
+   "text": "Slow end is down from four hundred milliseconds to about forty. There is still a wasted copy of every row that does not need to happen."
+  },
+  {
+   "t": 792,
+   "from": 2,
+   "kind": "broadcast",
+   "text": "Found something. A twelve byte header can claim sixty five thousand bytes of payload, and the parser sets that aside before checking."
+  },
+  {
+   "t": 808,
+   "from": 3,
+   "kind": "direct",
+   "to": 2,
+   "text": "Does that drop the connection or the whole process."
+  },
+  {
+   "t": 822,
+   "from": 2,
+   "kind": "direct",
+   "to": 3,
+   "text": "The process. One malformed frame takes the relay down for everyone connected to it."
+  },
+  {
+   "t": 844,
+   "from": 3,
+   "kind": "note",
+   "text": "Second time today he has reopened something I had written off as closed. I should stop treating his areas as finished until he says so."
+  },
+  {
+   "t": 862,
+   "from": 2,
+   "kind": "direct",
+   "to": 3,
+   "text": "Relay core stays off this train until the claimed length is capped. The library patch does not help if the caller sets the number."
+  },
+  {
+   "t": 886,
+   "from": 3,
+   "kind": "direct",
+   "to": 2,
+   "text": "Agreed, it stays off. How long for the cap. Under an hour and I hold the train rather than split the release."
+  },
+  {
+   "t": 906,
+   "from": 2,
+   "kind": "direct",
+   "to": 3,
+   "text": "Under an hour. It is one comparison against the bytes actually present. Proving nothing gets past it is the slow part."
+  },
+  {
+   "t": 940,
+   "from": 3,
+   "kind": "broadcast",
+   "text": "The two window check is merged as #2291. A release now stops only when both measures agree that something is genuinely wrong."
+  },
+  {
+   "t": 972,
+   "from": 0,
+   "kind": "direct",
+   "to": 3,
+   "text": "Mine is ready and sitting in the queue, which is sitting on you. Nothing else stands between it and going out."
+  },
+  {
+   "t": 994,
+   "from": 3,
+   "kind": "direct",
+   "to": 0,
+   "text": "You are first through when the train moves. I am starting the small share rollout of the held candidate now."
+  },
+  {
+   "t": 1030,
+   "from": 2,
+   "kind": "note",
+   "text": "The cap is in and the random input has gone quiet on the shape that used to crash it in seconds. Quiet for ten minutes is not proof."
+  },
+  {
+   "t": 1118,
+   "from": 1,
+   "kind": "broadcast",
+   "text": "Submitted the endpoint work as three separate commits, so any one of them can be undone without disturbing the others."
+  },
+  {
+   "t": 1150,
+   "from": 3,
+   "kind": "note",
+   "text": "The old check would have stopped this rollout twice already on quiet traffic. The new one has not flinched. That is the whole argument."
+  },
+  {
+   "t": 1178,
+   "from": 2,
+   "kind": "direct",
+   "to": 1,
+   "text": "Reading yours. The smaller window quietly returns less data if a caller asks for more than a day. Is that written down anywhere."
+  },
+  {
+   "t": 1204,
+   "from": 1,
+   "kind": "direct",
+   "to": 2,
+   "text": "It is not, and it should refuse instead of trimming. Better a caller sees an error than a total that looks right and is not."
+  },
+  {
+   "t": 1236,
+   "from": 1,
+   "kind": "note",
+   "text": "Second time today I made something faster and slightly wrong. Faster and wrong is not a trade I am allowed to make."
+  },
+  {
+   "t": 1282,
+   "from": 3,
+   "kind": "broadcast",
+   "text": "The held candidate is at half traffic and both measures are quiet. If that holds, the train goes out and the queue starts moving."
+  },
+  {
+   "t": 1340,
+   "from": 2,
+   "kind": "note",
+   "text": "I would like to say the way in is closed. What I can honestly say is that the two ways in I know about are closed."
+  },
+  {
+   "t": 1406,
+   "from": 3,
+   "kind": "direct",
+   "to": 0,
+   "text": "The queue is frozen while the train is held, so the check on #2417 is parked behind my gate work. It is not your change failing."
+  },
+  {
+   "t": 1430,
+   "from": 0,
+   "kind": "direct",
+   "to": 3,
+   "text": "I assumed it was mine and spent ten minutes rereading a two line change. Useful to know where the wait actually is."
+  },
+  {
+   "t": 1458,
+   "from": 3,
+   "kind": "direct",
+   "to": 0,
+   "text": "Train is at full traffic and healthy. The queue is moving again and your check has been released."
+  },
+  {
+   "t": 1488,
+   "from": 0,
+   "kind": "broadcast",
+   "text": "It went green and is merged as #2417. The cards hold their shape from the first paint and the chart announces what it is."
+  },
+  {
+   "t": 1518,
+   "from": 3,
+   "kind": "broadcast",
+   "text": "Release train 2026.32.1 is promoted. Everything that was held goes out on it, including the gateway that came back into scope."
+  },
+  {
+   "t": 1548,
+   "from": 2,
+   "kind": "broadcast",
+   "text": "Relay fix is merged as #1183. The advisory and the crasher sitting above it are both closed on that path."
+  },
+  {
+   "t": 1584,
+   "from": 1,
+   "kind": "broadcast",
+   "text": "Endpoint work is up as #1487. Faster, bounded, and it now refuses a question it cannot answer honestly."
+  },
+  {
+   "t": 1626,
+   "from": 0,
+   "kind": "note",
+   "text": "The tighter limit will fail someone's build next week and they will ask me to raise it. I should write down now why the answer is no."
+  },
+  {
+   "t": 1668,
+   "from": 3,
+   "kind": "direct",
+   "to": 1,
+   "text": "One more on yours. There is an error budget advisory open until 2026.32.2, so your migration rides that train. I will book the window."
+  },
+  {
+   "t": 1700,
+   "from": 1,
+   "kind": "direct",
+   "to": 3,
+   "text": "That is fair. I would rather it ran on a quiet morning with someone watching than at the tail end of a release day."
+  },
+  {
+   "t": 1750,
+   "from": 3,
+   "kind": "broadcast",
+   "text": "Cycle is closed. One train out, one migration waiting for the next, and nothing in production that we know to be wrong."
+  }
+ ]
+}
