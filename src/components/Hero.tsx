@@ -33,13 +33,11 @@ export default function Hero() {
     <section className="px-6 pt-16 pb-2">
       <div className="mx-auto max-w-[1120px]">
         {/* One word per seat, in that seat's colour — the line states the
-            company and names the four of them at the same time.
-            Not .lbl: that is nowrap (right for a column heading, wrong for a
-            sentence) and tracks far wider than this line wants. */}
-        {/* m42 is caps-only and wide — at a fixed size this line would set the
-            page width on a phone, so it scales with the viewport and wraps at
-            the word boundaries between seats. */}
-        <p className="m42 text-center text-[clamp(9px,1.15vw,13px)] uppercase">
+            company and names the four of them at the same time. m42 is
+            caps-only and wide, so the size scales with the viewport: at a fixed
+            size this line would set the page width on a phone. It wraps at the
+            word boundaries between seats. */}
+        <p className="m42 text-center text-[clamp(8px,0.82vw,11px)] uppercase">
           {EYEBROW.map((word, i) => (
             <span key={word} style={{ color: SEATS[i].color }}>
               {word}
@@ -67,7 +65,7 @@ export default function Hero() {
           </div>
           <div className="mt-1 text-[10.5px] text-ink-3">(creator fees)</div>
 
-          <div className="mt-5 text-[11px] font-medium tracking-[0.18em] text-ink-3">
+          <div className="mt-5 text-[11px] font-medium tracking-[0.18em] text-ink">
             CONTRACT
           </div>
           <button
