@@ -70,9 +70,17 @@ body {
   color: #101010;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/**
+ * Must stay inside @layer base. Tailwind v4 puts its utilities in a layer, and
+ * unlayered rules beat layered ones no matter the specificity — so an
+ * unlayered `a { color: inherit }` silently overrides every text-* utility
+ * applied to a link, site-wide.
+ */
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 * {

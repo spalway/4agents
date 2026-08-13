@@ -14,7 +14,7 @@ const SEAT_SWEEP = `linear-gradient(135deg, ${SEATS.map(
   (s, i) => `${s.color} ${Math.round((i / (SEATS.length - 1)) * 100)}%`,
 ).join(', ')})`
 
-function XLogo({ size = 12 }: { size?: number }) {
+function XLogo({ size = 18 }: { size?: number }) {
   return (
     <span
       aria-hidden="true"
@@ -181,10 +181,10 @@ export default function Header() {
             href={X_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-ink-3 transition-colors hover:text-ink"
+            className="flex items-center gap-2 text-ink transition-opacity hover:opacity-80"
           >
             <XLogo />
-            <span className="text-[10.5px]">@{X_HANDLE}</span>
+            <span className="text-[21px] font-bold">@{X_HANDLE}</span>
           </a>
         </div>
       </div>
