@@ -12,7 +12,7 @@
 export const CONTRACT: string = (import.meta.env.VITE_CONTRACT_ADDRESS ?? '').trim()
 
 /** Without the leading @. Falls back to the project handle. */
-export const X_HANDLE: string = (import.meta.env.VITE_X_HANDLE ?? 'xstartup')
+export const X_HANDLE: string = (import.meta.env.VITE_X_HANDLE ?? 'xstartupenv')
   .trim()
   .replace(/^@/, '')
 

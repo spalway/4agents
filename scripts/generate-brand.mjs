@@ -123,7 +123,7 @@ function quadrantMark(size) {
   const half = size / 2
   // The portrait sits at the largest integer scale that leaves a margin, so it
   // never touches the quadrant seam.
-  const scale = Math.max(1, Math.floor((half * 0.6) / 16))
+  const scale = Math.max(1, Math.floor((half * 0.8) / 16))
   const inset = Math.round((half - scale * 16) / 2)
 
   SEAT_COLORS.forEach((color, seat) => {

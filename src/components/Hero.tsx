@@ -37,7 +37,7 @@ export default function Hero() {
             caps-only and wide, so the size scales with the viewport: at a fixed
             size this line would set the page width on a phone. It wraps at the
             word boundaries between seats. */}
-        <p className="m42 text-center text-[clamp(5px,0.41vw,6px)] uppercase">
+        <p className="m42 text-center text-[clamp(5.75px,0.47vw,6.9px)] uppercase">
           {EYEBROW.map((word, i) => (
             <span key={word} style={{ color: SEATS[i].color }}>
               {word}

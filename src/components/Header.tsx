@@ -184,7 +184,20 @@ export default function Header() {
             className="flex items-center gap-2 text-ink transition-opacity hover:opacity-80"
           >
             <XLogo />
-            <span className="text-[21px] font-bold">@{X_HANDLE}</span>
+            {/* Same four-seat sweep as the mark, clipped to the glyphs. Needs
+                an explicit transparent fill — without it the text paints over
+                its own background. */}
+            <span
+              className="text-[11px] font-bold"
+              style={{
+                backgroundImage: SEAT_SWEEP,
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              @{X_HANDLE}
+            </span>
           </a>
         </div>
       </div>
