@@ -117,12 +117,10 @@ export function mix(hex, target, amount) {
 
 /**
  * Palette for one seat. The portrait is always drawn in the seat's colour at
- * full strength — never dimmed to fit its surroundings. Where a portrait would
- * otherwise sit on its own colour, the *ground* is darkened instead (see
- * QUADRANT_GROUND).
+ * full strength — never dimmed to fit its surroundings.
  *
- *   dark — a dark UI surface. Shoulders stepped down enough to separate head
- *          from torso at 20px.
+ *   dark — the site setting, and the one the profile mark uses. Shoulders
+ *          stepped down enough to separate head from torso at 20px.
  *   flat — a large format where the portrait is the subject rather than an
  *          icon. Shoulders barely stepped, so the figure reads as one bright
  *          shape instead of a lit head above a murky body.
@@ -137,12 +135,16 @@ export function paletteFor(color, on = 'dark') {
 }
 
 /**
- * Backing colour for a quadrant of the profile mark: the seat's colour taken
- * well down toward black. Deep enough that a full-strength portrait reads
- * cleanly on top, while the panel is still unmistakably that seat's hue.
+ * Backing square for a quadrant of the profile mark: the seat's colour taken
+ * toward white.
+ *
+ * It has to differ from the portrait's body fill or the head disappears into
+ * its own square, leaving a stencil. Lightening rather than darkening keeps the
+ * character itself at full site strength — nothing about the figure is dimmed
+ * to make room for it — while the square stays unmistakably that seat's hue.
  */
 export function quadrantGround(color) {
-  return mix(color, 0, 0.66)
+  return mix(color, 255, 0.42)
 }
 
 /** Horizontal runs of identical pixels — fewer rects, identical output. */

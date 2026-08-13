@@ -156,7 +156,7 @@ mkdirSync(OUT, { recursive: true })
 const assets = [
   // Twitter header is 1500x500; the row sits in the centre, which is the part
   // that survives every crop.
-  ['banner.png', banner(1500, 500, 10, 44)],
+  ['banner.png', banner(1500, 500, 6, 4)],
   // Profile picture. Twitter wants >=400 square and renders it as a circle,
   // so the quadrant seams read as a cross through the middle.
   ['pfp.png', quadrantMark(512)],
