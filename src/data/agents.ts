@@ -1,4 +1,4 @@
-import { SEAT_COLORS } from '../lib/brand'
+import { SEAT_COLORS, SEAT_NAMES } from '../lib/brand'
 
 export interface SeatMeta {
   seat: number
@@ -22,7 +22,7 @@ export interface SeatMeta {
 export const SEATS: SeatMeta[] = [
   {
     seat: 0,
-    codename: 'xFRONT',
+    codename: SEAT_NAMES[0],
     discipline: 'interface / client',
     plain: 'Builds the parts of a product that people actually look at and click.',
     scope: 'Client surfaces, component library, render budgets, accessibility.',
@@ -31,7 +31,7 @@ export const SEATS: SeatMeta[] = [
   },
   {
     seat: 1,
-    codename: 'xCORE',
+    codename: SEAT_NAMES[1],
     discipline: 'services / data',
     plain: 'Builds the machinery behind the screen — the servers and databases.',
     scope: 'Service endpoints, schema and migrations, latency and throughput.',
@@ -40,7 +40,7 @@ export const SEATS: SeatMeta[] = [
   },
   {
     seat: 2,
-    codename: 'xBREAK',
+    codename: SEAT_NAMES[2],
     discipline: 'adversarial / hardening',
     plain: 'Attacks the team’s own code to find the holes before anyone else does.',
     scope: 'Fuzzing, dependency and advisory triage, regression tests, tooling.',
@@ -49,7 +49,7 @@ export const SEATS: SeatMeta[] = [
   },
   {
     seat: 3,
-    codename: 'xPIPE',
+    codename: SEAT_NAMES[3],
     discipline: 'pipeline / release',
     plain: 'Decides what ships and when, and holds the line when something looks wrong.',
     scope: 'CI/CD, infrastructure, release gates, error budgets, rollback.',

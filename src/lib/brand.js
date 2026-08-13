@@ -11,6 +11,10 @@
 /** Seat identity colours, in seat order. */
 export const SEAT_COLORS = ['#6fb4d4', '#8cc07a', '#d8845f', '#a894d6']
 
+/** Seat codenames, in seat order. Kept here so the asset generator can name
+ *  files without importing the TypeScript seat table. */
+export const SEAT_NAMES = ['xFRONT', 'xCORE', 'xBREAK', 'xPIPE']
+
 /**
  * 16x16 portraits, one per seat. Hand-authored rather than generated: an
  * identicon gives four different blobs, and what is wanted is four recognisable

@@ -16,7 +16,7 @@ import { deflateSync } from 'node:zlib'
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { SEAT_COLORS, paletteFor, quadrantGround, spriteRuns } from '../src/lib/brand.js'
+import { SEAT_COLORS, SEAT_NAMES, paletteFor, quadrantGround, spriteRuns } from '../src/lib/brand.js'
 
 const OUT = resolve(dirname(fileURLToPath(import.meta.url)), '../public/brand')
 
@@ -135,6 +135,18 @@ function quadrantMark(size) {
   return c
 }
 
+/** One seat alone on its own square — same proportions as a quadrant of the
+ *  four-up mark, so a solo avatar sits beside it without looking like a
+ *  different set. */
+function soloMark(seat, size) {
+  const c = canvas(size, size)
+  const scale = Math.max(1, Math.floor((size * 0.8) / 16))
+  const inset = Math.round((size - scale * 16) / 2)
+  c.fill(0, 0, size, size, quadrantGround(SEAT_COLORS[seat]))
+  c.sprite(seat, inset, inset, scale, 'flat')
+  return c
+}
+
 /** Black field, four portraits centred in a row. */
 function banner(w, h, scale, gap) {
   const c = canvas(w, h)
@@ -163,6 +175,7 @@ const assets = [
   ['favicon-32.png', quadrantMark(32)],
   ['favicon-64.png', quadrantMark(64)],
   ['apple-touch-icon.png', quadrantMark(192)],
+  ...SEAT_NAMES.map((n, seat) => [`pfp-${n.toLowerCase()}.png`, soloMark(seat, 512)]),
 ]
 
 for (const [name, c] of assets) {
